@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="pwdGenrat.css">
+</head>
+<body>
+	<div class="inputBox">
+		<h2>Generator PassWord</h2>
+		<input type="text" name="password" placeholder="Create Password....." id="password" readonly="">
+		<br>
+		<button onclick="getPassword();">Generate PAssword</button>
+	</div>
+	<script type="text/javascript">
+		function getPassword()
+		{
+			var chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@##$%^&*()_+?><:{}[]";
+			var passwordLength = 16;
+			var password = " ";
+
+			for(var i=0; i<passwordLength; i++)
+			{
+				var randomNumber = Math.floor(Math.random() * chars.length);
+				password += chars.substring(randomNumber,randomNumber+1);
+			}
+			document.getElementById("password").value = password;
+		}
+		
+	</script>
+</body>
+</html>
